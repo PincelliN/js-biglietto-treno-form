@@ -5,7 +5,7 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del bigliett
 - va applicato uno sconto del 40% per gli over 65.
 */
 //Variabili Globali
-const prezzoKm = 0.21;
+const PrezzoKm = 0.21;
 //Creo la variabile del Bottone
 const Clean = document.getElementById("reset");
 const Genera = document.getElementById("work");
@@ -15,8 +15,8 @@ console.log(Genera);
 
 Genera.addEventListener("click", function () {
   //Variabile per le classi che devono apparire
-  const ticket = document.getElementById("tik");
-  ticket.classList.remove("d-none");
+  const Ticket = document.getElementById("tik");
+  Ticket.classList.remove("d-none");
 
   // Variabile nome
   let UserName = document.getElementById("username").value;
@@ -28,7 +28,7 @@ Genera.addEventListener("click", function () {
 
   console.log(Percorso);
   // Calcolo il prezzo del bigletto senza standar
-  let priceTicket = prezzoKm * Percorso;
+  let PriceTicket = PrezzoKm * Percorso;
 
   //Creo  variabile età
   let Age = document.getElementById("userage").value;
@@ -36,19 +36,19 @@ Genera.addEventListener("click", function () {
   console.log(Age);
   //Controllo se il soggetto ha diritto ad uno sconto
   if (Age == 2) {
-    let PriceCut = priceTicket * 0.4;
-    priceTicket = (priceTicket - PriceCut).toFixed(2);
+    let PriceCut = PriceTicket * 0.4;
+    PriceTicket = (PriceTicket - PriceCut).toFixed(2);
     Age = "Pensionato";
   } else if (Age == 0) {
-    let PriceCut = priceTicket * 0.2;
-    priceTicket = (priceTicket - PriceCut).toFixed(2);
+    let PriceCut = PriceTicket * 0.2;
+    PriceTicket = (PriceTicket - PriceCut).toFixed(2);
     Age = "Studente";
   } else {
-    priceTicket = priceTicket.toFixed(2);
+    PriceTicket = PriceTicket.toFixed(2);
     Age = "";
   }
 
-  console.log(priceTicket);
+  console.log(PriceTicket);
   // variabile per carrozza casuale
   let Car = Math.random() * 10;
   Car = Math.round(Car);
@@ -58,7 +58,7 @@ Genera.addEventListener("click", function () {
   //stampo nome, prezzo ed offerta
   document.getElementById("passenger").innerHTML = UserName;
   document.getElementById("cut").innerHTML = Age;
-  document.getElementById("price").innerHTML = priceTicket + "$";
+  document.getElementById("price").innerHTML = PriceTicket + "$";
   document.getElementById("carriage").innerHTML = Car;
   document.getElementById("cp").innerHTML = CP;
 });
@@ -66,8 +66,8 @@ Genera.addEventListener("click", function () {
 //funzione per resettare tutto
 Clean.addEventListener("click", function () {
   //variabile del contenitore biglietto per aggiungere la classe d-none
-  const ticket = document.getElementById("tik");
-  ticket.classList.add("d-none");
+  const Ticket = document.getElementById("tik");
+  Ticket.classList.add("d-none");
 
   // Variabile nome
   document.getElementById("username").value = "";
