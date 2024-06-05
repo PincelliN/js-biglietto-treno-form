@@ -14,11 +14,11 @@ console.log(Genera);
 // Creo un evento al click
 
 Genera.addEventListener("click", function () {
- //Variabile per le classi che devono apparire
+  //Variabile per le classi che devono apparire
   const ticket = document.getElementById("tik");
-        ticket.classList.remove("d-none");
+  ticket.classList.remove("d-none");
 
-   // Variabile nome
+  // Variabile nome
   let UserName = document.getElementById("username").value;
   UserName = UserName.toUpperCase();
 
@@ -36,10 +36,12 @@ Genera.addEventListener("click", function () {
   console.log(Age);
   //Controllo se il soggetto ha diritto ad uno sconto
   if (Age == 2) {
-    priceTicket = (priceTicket * 0.4).toFixed(2);
+    let PriceCut = priceTicket * 0.4;
+    priceTicket = (priceTicket - PriceCut).toFixed(2);
     Age = "Pensionato";
   } else if (Age == 0) {
-    priceTicket = (priceTicket * 0.2).toFixed(2);
+    let PriceCut = priceTicket * 0.2;
+    priceTicket = (priceTicket - PriceCut).toFixed(2);
     Age = "Studente";
   } else {
     priceTicket = priceTicket.toFixed(2);
@@ -48,10 +50,10 @@ Genera.addEventListener("click", function () {
 
   console.log(priceTicket);
   // variabile per carrozza casuale
-  let Car = Math.random()*10;
+  let Car = Math.random() * 10;
   Car = Math.round(Car);
   console.log(Car);
-  let CP = Math.random()*100000;
+  let CP = Math.random() * 100000;
   CP = Math.round(CP);
   //stampo nome, prezzo ed offerta
   document.getElementById("passenger").innerHTML = UserName;
@@ -61,17 +63,13 @@ Genera.addEventListener("click", function () {
   document.getElementById("cp").innerHTML = CP;
 });
 
-
 //funzione per resettare tutto
-Clean.addEventListener("click",function () {
+Clean.addEventListener("click", function () {
   //variabile del contenitore biglietto per aggiungere la classe d-none
   const ticket = document.getElementById("tik");
   ticket.classList.add("d-none");
 
   // Variabile nome
- document.getElementById("username").value = "";
- document.getElementById("userdistance").value ="";
- 
-
-})
-
+  document.getElementById("username").value = "";
+  document.getElementById("userdistance").value = "";
+});
