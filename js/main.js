@@ -38,7 +38,11 @@ Genera.addEventListener("click", function () {
     
   }
   console.log(priceTicket);
+
+  document.getElementById("passenger").innerHTML = UserName;
+  document.getElementById("price").innerHTML = priceTicket;
   return UserName, Age, Percorso, priceTicket;
- 
+
+  
 });
 
