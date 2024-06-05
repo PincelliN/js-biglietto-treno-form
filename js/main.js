@@ -7,7 +7,7 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del bigliett
 //Variabili Globali
 const prezzoKm = 0.21;
 //Creo la variabile del Bottone
-
+const Clean = document.getElementById("reset");
 const Genera = document.getElementById("work");
 
 console.log(Genera);
@@ -47,10 +47,31 @@ Genera.addEventListener("click", function () {
   }
 
   console.log(priceTicket);
-  
+  // variabile per carrozza casuale
+  let Car = Math.random()*10;
+  Car = Math.round(Car);
+  console.log(Car);
+  let CP = Math.random()*100000;
+  CP = Math.round(CP);
   //stampo nome, prezzo ed offerta
   document.getElementById("passenger").innerHTML = UserName;
   document.getElementById("cut").innerHTML = Age;
   document.getElementById("price").innerHTML = priceTicket + "$";
-  return UserName, Age, Percorso, priceTicket;
+  document.getElementById("carriage").innerHTML = Car;
+  document.getElementById("cp").innerHTML = CP;
 });
+
+
+//funzione per resettare tutto
+Clean.addEventListener("click",function () {
+  //variabile del contenitore biglietto per aggiungere la classe d-none
+  const ticket = document.getElementById("tik");
+  ticket.classList.add("d-none");
+
+  // Variabile nome
+ document.getElementById("username").value = "";
+ document.getElementById("userdistance").value ="";
+ 
+
+})
+

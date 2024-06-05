@@ -1,74 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container bg bg-danger">
-        <div class="row row-cols-1 ">
+      <div class="row row-cols-1">
+        <div class="col text-center text-white">
+          <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+        </div>
+        <div class="col">
+          <div class="d-flex justify-content-evenly">
+            <div>
+              <label for="Name">Nome Cognome</label><br />
+              <input
+                type="text"
+                name="Name"
+                id="username"
+                placeholder="Nome Cognome"
+              />
+            </div>
+            <div>
+              <label for="distance">Km da Percorrere</label><br />
+              <input
+                type="text"
+                name="distance"
+                id="userdistance"
+                placeholder="Distanza"
+              />
+            </div>
+            <div>
+              <label for="age">Fascia d'età</label><br />
+              <select name="age" id="userage">
+                <option value="2">Pensionato</option>
+                <option value="1">Lavoratore</option>
+                <option value="0">Scolaro</option>
+              </select>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center m-3">
+            <div id="work" class="btn btn-secondary text-danger-emphasis">
+              Genera
+            </div>
+            <div id="reset" class="btn btn-secondary text-danger-emphasis ms-1">
+              Annulla
+            </div>
+          </div>
+        </div>
+        <div id="tik" class="col d-none">
+          <div class="row row-cols-1">
             <div class="col text-center text-white">
-                <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+              <h2>IL TUO BIGLETTO</h2>
             </div>
             <div class="col">
-                <div class="d-flex justify-content-evenly">
-                    <div>
-                        <label for="Name">Nome Cognome</label><br>
-                        <input type="text" name="Name" id="username" placeholder="Nome Cognome">
-                    </div>
-                    <div>
-                        <label for="distance">Km da Percorrere</label><br>
-                        <input type="text" name="distance" id="userdistance"
-                        placeholder="Distanza">
-                    </div>
-                    <div>
-                        <label for="age">Fascia d'età</label><br>
-                        <select name="age" id="userage">
-                            <option value="2">Pensionato</option>
-                            <option value="1">Lavoratore</option>
-                            <option value="0">Scolaro</option>
-                        </select>
-                 </div>
+              <h3>DETTAGLIO PASSEGGERI</h3>
+              <div class="row">
+                <div class="col-4">
+                  <h4>NOME PASSEGGERO</h4>
+                  <p id="passenger"></p>
                 </div>
-                <div class="d-flex justify-content-center m-3">
-                    <div id="work" class="btn btn-secondary text-danger-emphasis">Genera</div>
-                    <div id="reset" class="btn btn-secondary text-danger-emphasis ms-1">Annulla</div>
+                <div class="col-2">
+                  <h4>Offerta</h4>
+                  <p id="cut"></p>
                 </div>
-               
-            </div>
-            <div class="col text-center text-white ">
-                <h2>IL TUO BIGLETTO</h2>
-            </div>
-            <div id="tik" class="col d-none">
-                <h3>DETTAGLIO PASSEGGERI</h3>
-                <div class="row">
-                    <div class="col-4">
-                        <h4>NOME PASSEGGERO</h4>
-                        <p id="passenger"></p>
-                    </div>
-                    <div class="col-2">
-                        <h4>Offerta</h4>
-                        <p id="cut"></p>
-                    </div>
-                    <div class="col-2">
-                        <h4>Carrozza</h4>
-                        <p></p>
-                    </div>
-                    <div class="col-2">
-                        <h4>Codice CP</h4>
-                        <p></p>
-                    </div>
-                    <div class="col-2">
-                        <h4>Costo Bigletto</h4>
-                        <p id="price"></p>
-                    </div>
+                <div class="col-2">
+                  <h4>Carrozza</h4>
+                  <p id="carriage"></p>
                 </div>
+                <div class="col-2">
+                  <h4>Codice CP</h4>
+                  <p id="cp"></p>
+                </div>
+                <div class="col-2">
+                  <h4>Costo Bigletto</h4>
+                  <p id="price"></p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <script type="text/javascript" src="js/main.js"></script>
-</body>
+  </body>
 </html>
