@@ -72,4 +72,5 @@ Clean.addEventListener("click", function () {
   // Variabile nome
   document.getElementById("username").value = "";
   document.getElementById("userdistance").value = "";
+  document.getElementById("userage").value = "";
 });
